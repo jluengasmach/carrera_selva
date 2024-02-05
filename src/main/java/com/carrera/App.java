@@ -20,16 +20,8 @@ class PreciosCategoria {
         return valorMin;
     }
 
-    public void setValorMin(int valorMin) {
-        this.valorMin = valorMin;
-    }
-
     public Integer getValorMax() {
         return valorMax;
-    }
-
-    public void setValorMax(int valorMax) {
-        this.valorMax = valorMax;
     }
 
     @Override
@@ -95,7 +87,7 @@ class Participante {
     private String grupoSanguineo;
 
     public Participante(int dni, String nombre, String apellido, int edad, String celular,
-            String numeroEmergencia, String grupoSanguineo) {
+        String numeroEmergencia, String grupoSanguineo) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -144,9 +136,6 @@ class Participante {
 }
 
 
-/**
- * Inscripcion
- */
 class Inscripcion {
     private int id;
     private Categoria categoria;
@@ -183,7 +172,7 @@ class Inscripcion {
         if (this.participante.getEdad() < 18) {
             if (precios.getValorMin() == -1) {
                 throw new Exception(
-                    "No se permiten inscripciones a menores de 18 años para esta categoria."
+                        "No se permiten inscripciones a menores de 18 años para esta categoria."
                 );
             }
 
@@ -292,19 +281,19 @@ public class App {
 
         // Definicion de categorias
         Categoria circuitoChico = new Categoria(
-            "Circuito chico",
-            "2 km por selva y arroyos",
-            precioChico
+                "Circuito chico",
+                "2 km por selva y arroyos",
+                precioChico
         );
         Categoria circuitoMedio = new Categoria(
-            "Circuito medio",
-            "5 km por selva, arroyos y barro",
-            precioMedio
+                "Circuito medio",
+                "5 km por selva, arroyos y barro",
+                precioMedio
         );
         Categoria circuitoAvanzado = new Categoria(
-            "Circuito avanzado",
-            "10 km por selva, arroyos y escalada en piedra",
-            precioAvanzado
+                "Circuito avanzado",
+                "10 km por selva, arroyos y escalada en piedra",
+                precioAvanzado
         );
 
         // CREAR UN NUEVO PARTICIPANTE E INSCRIBIRLO EN UNA CATEGORÍA. CALCULAR EL MONTO DE
@@ -313,13 +302,13 @@ public class App {
 
         // Creacion de participante
         Participante participante1 = new Participante(
-            11111,
-            "Juan",
-            "Lozano",
-            18,
-            "3102394856",
-            "3102394857",
-            "O+"
+                11111,
+                "Juan",
+                "Lozano",
+                18,
+                "3102394856",
+                "3102394857",
+                "O+"
         );
 
         // Inscripcion de participante
@@ -333,32 +322,32 @@ public class App {
         // UNA).
 
         Participante participante2 = new Participante(
-            11111323,
-            "Jhonn",
-            "Luengas",
-            27,
-            "3232394856",
-            "3142394857",
-            "A-"
+                11111323,
+                "Jhonn",
+                "Luengas",
+                27,
+                "3232394856",
+                "3142394857",
+                "A-"
         );
 
         Participante participante3 = new Participante(
-            11111312,
-            "Luis",
-            "Garzón",
-            16,
-            "3232394856",
-            "3142394857",
-            "AB+");
+                11111312,
+                "Luis",
+                "Garzón",
+                16,
+                "3232394856",
+                "3142394857",
+                "AB+");
 
         Participante participante4 = new Participante(
-            1112,
-            "Luisa",
-            "Garnica",
-            31,
-            "3452394856",
-            "3562394857",
-            "O-"
+                1112,
+                "Luisa",
+                "Garnica",
+                31,
+                "3452394856",
+                "3562394857",
+                "O-"
         );
 
         // Inscripcion de participante
@@ -379,7 +368,6 @@ public class App {
         inscripciones.getInscripcionesPorCategoria(circuitoChico);
         inscripciones.getInscripcionesPorCategoria(circuitoMedio);
         inscripciones.getInscripcionesPorCategoria(circuitoAvanzado);
-
 
 
         // DESINSCRIBIR A UN PARTICIPANTE. MOSTRAR COMO QUEDA LA LISTA DE INSCRIPTOS EN LA CATEGORÍA
